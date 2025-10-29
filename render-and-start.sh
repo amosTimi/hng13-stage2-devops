@@ -13,12 +13,12 @@ else
 fi
 
 # determine PRIMARY/SECONDARY based on ACTIVE_POOL
-if [ "\${ACTIVE_POOL:-blue}" = "blue" ]; then
-  export PRIMARY_HOST="app_blue"
-  export SECONDARY_HOST="app_green"
-else
+if [ "\${ACTIVE_POOL:-green}" = "green" ]; then
   export PRIMARY_HOST="app_green"
   export SECONDARY_HOST="app_blue"
+else
+  export PRIMARY_HOST="app_blue"
+  export SECONDARY_HOST="app_green"
 fi
 
 # render template to nginx/nginx.conf
